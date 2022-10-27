@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
 import emailjs from '@emailjs/browser';
 import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
@@ -19,32 +21,46 @@ const Footer = () => {
 
   const form = useRef();
   const [result, showResult] = useState(false);
-  const sendEmail = (e) => {
-    e.preventDefault();
 
-    emailjs.sendForm(
-      'service_re4pbq9', 
-      'template_7kt7iq8', 
-      form.current, 
-      'fhMC_ZVTG0ctP8k6q'
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          console.log("message sendt")
-      }, 
-      (error) => {
-          console.log(error.text);
-      }
-      );
-      e.target.reset();
-      showResult(true);
-  };
+  const formik = useFormik({
+    initialValues: {
+      name: '', 
+      email: '', 
+      message: '' 
+    },
+    validationSchema: Yup.object({
+      name: Yup.string()
+	    .required('Name is required'),
+      email: Yup.string()
+	    .required('Email is required'),
+      message: Yup.string()
+      .required('Message field is required')
+    }),
+    onSubmit: (values, {resetForm}) => {
+      resetForm({ values: '' })
+       emailjs.sendForm(
+        'service_re4pbq9', 
+        'template_7kt7iq8', 
+        form.current, 
+        'fhMC_ZVTG0ctP8k6q'
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            console.log("message sendt")
+        }, 
+        (error) => {
+            console.log(error.text);
+        }
+        );
+        showResult(true);
 
-  // Hide success message after some time
-  setTimeout(() => {
-    showResult(false);
-  }, 10000);
+          // Hide success message after some time
+        setTimeout(() => {
+        showResult(false);
+      }, 5000);
+   },
+});
 
   return (
     <>
@@ -61,26 +77,41 @@ const Footer = () => {
         </div>
       </div>
 
-      <form ref={form} onSubmit={sendEmail} className="app__footer-form app__flex">
+      <form ref={form} onSubmit={formik.handleSubmit} className="app__footer-form app__flex">
         <input 
           placeholder='Name' 
           type="text" 
           name="name" 
           className="p-text"
+          onChange={formik.handleChange}
+         	value={formik.values.name}
           />
+          	<div className={`error-text ${formik.touched.name && formik.errors.name ? 'show' : ''}`}>
+                    {formik.errors.name}
+            </div>
           
           <input 
           placeholder='Email' 
           type="email" 
           name="email" 
           className="p-text"
+          onChange={formik.handleChange}
+          value={formik.values.email}
           />
+            <div className={`error-text ${formik.touched.email && formik.errors.email ? 'show' : ''}`}>
+                    {formik.errors.email}
+            </div>
 
           <textarea 
           placeholder='Message' 
           name="message" 
           className="p-text"
+          onChange={formik.handleChange}
+          value={formik.values.message}
           />
+            <div className={`error-text ${formik.touched.message && formik.errors.message ? 'show' : ''}`}>
+                    {formik.errors.message}
+            </div>
           
         <input type="submit" value="Send Message" className="button" />
         <div>{result ? <Result/> : null}</div>
