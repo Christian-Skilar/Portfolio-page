@@ -108,6 +108,7 @@
       border-radius: 10px;
       border:2px solid var(--secondary-color);
       background-color: var(--white-color);
+      -webkit-appearance: none;
   
       font-weight: 500;
       color: var(--secondary-color);
@@ -138,5 +139,51 @@
     @media screen and (max-width: 768px) {
       width: 100%;
       margin: 1rem 0;
+    }
+  }
+
+  .sosials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 1rem;
+  
+    div {
+
+      a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: var(--white-color);
+        margin: 10px;
+        border: 1px solid var(--lightGray-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease-in-out;
+
+        svg {
+          width: 17px;
+          height: 17px;
+          color: var(--gray-color);
+        }
+    
+        &:hover {
+          background-color: var(--secondary-color);
+          border-color: var(--secondary-color);
+    
+          svg {
+            color: var(--white-color);
+          }
+        }
+      }
+  
+  
+      @media screen and (min-width: 501px) {
+
+          display: none;
+
+      }
     }
   }

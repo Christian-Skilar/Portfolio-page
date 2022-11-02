@@ -20,10 +20,12 @@ import profileimg from '../assets/profileimg.png';
 import check from '../assets/check.png';
 import lyrics from '../assets/lyrics.png';
 import modern from '../assets/modern.png';
+import dashboard from '../assets/dashboard.png';
 
 
 const images = {
   email,
+  dashboard,
   site1,
   lyrics,
   modern,

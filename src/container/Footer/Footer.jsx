@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react';
+import { BsGithub } from 'react-icons/bs';
+import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import emailjs from '@emailjs/browser';
@@ -116,6 +118,26 @@ const Footer = () => {
         <input type="submit" value="Send Message" className="button" />
         <div>{result ? <Result/> : null}</div>
       </form>
+
+      <div className="sosials">
+        <div>
+          <a href="https://www.linkedin.com/in/christian-larsen-99638a157/" rel="noreferrer" target="_blank">
+          <FaLinkedinIn />
+          </a>
+        </div>
+
+        <div>
+        <a href="https://github.com/Christian-Skilar" rel="noreferrer" target="_blank">
+        <BsGithub />
+          </a>
+        </div>
+
+        <div>
+        <a href="https://www.facebook.com/larsen3/" rel="noreferrer" target="_blank">
+        <FaFacebookF />
+          </a>
+        </div>
+      </div>
 
     </>
   );
