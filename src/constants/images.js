@@ -10,27 +10,25 @@ import sass from '../assets/sass.png';
 import profile from '../assets/profile.png';
 import circle from '../assets/circle.svg';
 import coming from '../assets/coming-soon.jpeg';
-import site1 from '../assets/m-player.png';
 import site2 from '../assets/modern.png';
 import tailwind from '../assets/tailwind.svg';
 import divi from '../assets/divi.png';
 import wordpress from '../assets/wordpress.png';
-import christian from '../assets/myname.png';
 import profileimg from '../assets/profileimg.png';
 import check from '../assets/check.png';
 import lyrics from '../assets/lyrics.png';
 import modern from '../assets/modern.png';
 import dashboard from '../assets/dashboard.png';
+import crypto from '../assets/crypto.png';
+import framer from '../assets/framer.svg';
 
 
 const images = {
   email,
   dashboard,
-  site1,
   lyrics,
   modern,
   check,
-  christian,
   profileimg,
   divi,
   wordpress,
@@ -47,6 +45,8 @@ const images = {
   sass,
   profile,
   circle,
+  crypto,
+  framer,
 };
 
 export default images;

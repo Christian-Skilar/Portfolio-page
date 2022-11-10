@@ -14,6 +14,7 @@ const skills = [
   { name: 'Tailwind', icon: images.tailwind},
   { name: 'Wordpress', icon: images.wordpress},
   { name: 'Divi', icon: images.divi},
+  { name: 'Framer', icon: images.framer},
 ] 
 
 const Skills = () => {
@@ -50,6 +51,8 @@ const Skills = () => {
           <p className="p-text">Working freelance.</p>
           <p className="p-text">Self study and online/YouTube courses.</p>
           <p className="p-text">Growning intrest in Web 3.0.</p>
+          <p className="p-text">Created the portfolio showcasing my code</p>
+          <p className="p-text">Microsoft .NET and C# course.</p>
           <br/>
           <h4 className="bold-text">2023</h4>
           <p className="p-text">Plans for the future:</p>

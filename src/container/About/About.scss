@@ -10,6 +10,7 @@
     align-items: flex-start;
     flex-wrap: wrap;
     margin-top: 2rem;
+    max-width: 900px;
   }
   
   .app__profile-item {
@@ -25,9 +26,7 @@
 
     &:hover {
       box-shadow: 15px 5px 20px rgba(0, 0, 0, 0.1);
-      transform: skew(-0.8deg);
-
-      scale: 1.05;
+      transform: scale(1.03);
     }
   
     img {
