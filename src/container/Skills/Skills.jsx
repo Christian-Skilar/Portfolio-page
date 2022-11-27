@@ -15,6 +15,7 @@ const skills = [
   { name: 'Wordpress', icon: images.wordpress},
   { name: 'Divi', icon: images.divi},
   { name: 'Framer', icon: images.framer},
+  { name: 'Next', icon: images.nextjs},
 ] 
 
 const Skills = () => {

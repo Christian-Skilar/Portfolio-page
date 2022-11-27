@@ -21,6 +21,8 @@ import modern from '../assets/modern.png';
 import dashboard from '../assets/dashboard.png';
 import crypto from '../assets/crypto.png';
 import framer from '../assets/framer.svg';
+import nextjs from '../assets/nextjs.svg';
+import metaverse from '../assets/metaverse.png';
 
 
 const images = {
@@ -47,6 +49,8 @@ const images = {
   circle,
   crypto,
   framer,
+  nextjs,
+  metaverse,
 };
 
 export default images;

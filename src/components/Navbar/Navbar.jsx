@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HiMenuAlt4, HiX } from 'react-icons/hi';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.scss';
 
 const Navbar = () => {
@@ -21,10 +21,14 @@ const Navbar = () => {
             <div className="app__navbar-menu">
         <HiMenuAlt4 onClick={() => setToggle(true)} />
 
+        <AnimatePresence>
         {toggle && (
           <motion.div
+            key="mobilemenu"
             whileInView={{ x: [300, 0] }}
             transition={{ duration: 0.85, ease: 'easeOut' }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, x: [0, 300] }}
           >
             <HiX onClick={() => setToggle(false)} />
             <ul>
@@ -38,6 +42,7 @@ const Navbar = () => {
             </ul>
           </motion.div>
         )}
+        </AnimatePresence>
       </div>
         </nav>
     )

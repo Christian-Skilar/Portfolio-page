@@ -4,11 +4,11 @@ import { AppWrap, MotionWrap } from '../../wrapper';
 import './About.scss';
 
 const abouts = [
+  { title: 'Metaverse', description: 'Metaverse inspired page buildt with Next.js Tailwind and framer motion', linkName: 'View Page', link: 'https://metaversesupersite.netlify.app/', imgUrl: images.metaverse},
   { title: 'Modern Web Design', description: 'Modern Website made by using React.js and Tailwind. YT codealong', linkName: 'View Page', link: 'https://modern-website-style.netlify.app/', imgUrl: images.modern},
-  { title: 'Music Player', description: 'Music player made using the shazam API from RapidAPI', linkName: 'View Page', link: 'https://christify-music-player.netlify.app/', imgUrl: images.lyrics},
   { title: 'Dashboard', description: 'Admin dashboard in React.js Tailwind and Syncfusion', linkName: 'View Page', link: 'https://ultimate-dashboard-site.netlify.app/', imgUrl: images.dashboard},
   { title: 'Crypto Community', description: 'Crypto community with React, Sass and Framer Motion', linkName: 'View Page', link: 'https://wallofgains.netlify.app/', imgUrl: images.crypto},
-  { title: 'Coming Soon', description: 'Games site In Development, this one will be awesome...', linkName: 'In The Works', link: ' ', imgUrl: images.coming},
+  { title: 'Music Player', description: 'Music player made using the shazam API from RapidAPI', linkName: 'View Page', link: 'https://christify-music-player.netlify.app/', imgUrl: images.lyrics},
   { title: 'Coming Soon', description: 'Crypto currency page In Development, this one will be awesome...', linkName: 'In The Works', link: ' ', imgUrl: images.coming},
 ] 
 
