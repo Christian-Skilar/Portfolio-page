@@ -1,19 +1,17 @@
-.app__skills {
-    flex: 1;
-    width: 100%;
-    flex-direction: column;
-  }
+  .skills-container {
+    padding: 70px 10px 0 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }  
   
   .app__skills-container {
-    width: 80%;
-    margin-top: 3rem;
-  
+    width: 100%;
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   
     @media screen and (max-width: 900px) {
-      width: 100%;
       flex-direction: column;
     }
   }
@@ -25,12 +23,18 @@
     justify-content: center;
     align-items: flex-start;
     margin-right: 20px;
+    max-height: 100vh;
+    overflow-x: scroll;
   
     @media screen and (max-width: 900px) {
       margin-right: 0;
       justify-content: center;
       align-items: center;
     }
+  }
+
+  ::-webkit-scrollbar {
+    background: transparent; 
   }
   
   .app__skills-item {
@@ -54,11 +58,6 @@
         box-shadow: 0 0 25px #fef4f5;
       }
   
-      @media screen and (min-width: 2000px) {
-        width: 150px;
-        height: 150px;
-      }
-  
       @media screen and (max-width: 450px) {
         width: 70px;
         height: 70px;
@@ -69,14 +68,6 @@
       font-weight: 500;
       margin-top: 0.5rem;
       
-    }
-  
-    @media screen and (min-width: 2000px) {
-      margin: 1rem 2rem;
-  
-      p {
-        margin-top: 1rem;
-      }
     }
   }
   
@@ -96,7 +87,14 @@
     }
   
     @media screen and (max-width: 900px) {
-      margin-top: 2rem;
+      margin-left: 7%;
+      margin-top: 50px;
     }
+
   }
 
+  .worker {
+    display: block;
+    width: 300px;
+    margin: 30px auto 0 auto;
+  }

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { images } from '../../constants';
-import { AppWrap, MotionWrap } from '../../wrapper';
 import './Skills.scss';
 
 const skills = [
@@ -21,7 +20,7 @@ const skills = [
 const Skills = () => {
 
   return (
-    <>
+    <div className='skills-container'>
       <h2 className="head-text">Skills & <span>Experience</span></h2>
 
       <div className="app__skills-container">
@@ -45,15 +44,15 @@ const Skills = () => {
 
         <div className="app__skills-exp">
           <h4 className="bold-text">2021</h4>
-          <p className="p-text">Done with study at Noroff.</p>
-          <p className="p-text">Self study and online courses.</p>
+          <p className="p-text">- Done with study at Noroff.</p>
+          <p className="p-text">- Self study and online courses.</p>
           <br/>
           <h4 className="bold-text">2022</h4>
-          <p className="p-text">Working freelance.</p>
-          <p className="p-text">Self study and online/YouTube courses.</p>
-          <p className="p-text">Growning intrest in Web 3.0.</p>
-          <p className="p-text">Created the portfolio showcasing my code</p>
-          <p className="p-text">Microsoft .NET and C# course.</p>
+          <p className="p-text">- Working freelance.</p>
+          <p className="p-text">- Self study and online/YouTube courses.</p>
+          <p className="p-text">- Growning intrest in Web 3.0.</p>
+          <p className="p-text">- Created the portfolio showcasing my code</p>
+          <p className="p-text">- Microsoft .NET and C# course.</p>
           <br/>
           <h4 className="bold-text">2023</h4>
           <p className="p-text">Plans for the future:</p>
@@ -64,12 +63,9 @@ const Skills = () => {
         </div>
       </div>
 
-    </>
+      <img className='worker' src={images.worker} alt="worker" />
+    </div>
   );
 };
 
-export default AppWrap(
-  MotionWrap(Skills, 'app__skills'),
-  'skills',
-  'app__primarybg',
-);
+export default Skills;

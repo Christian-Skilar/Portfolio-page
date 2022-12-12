@@ -9,7 +9,6 @@ import react from '../assets/react.png'
 import sass from '../assets/sass.png';
 import profile from '../assets/profile.png';
 import circle from '../assets/circle.svg';
-import coming from '../assets/coming-soon.jpeg';
 import site2 from '../assets/modern.png';
 import tailwind from '../assets/tailwind.svg';
 import divi from '../assets/divi.png';
@@ -23,6 +22,10 @@ import crypto from '../assets/crypto.png';
 import framer from '../assets/framer.svg';
 import nextjs from '../assets/nextjs.svg';
 import metaverse from '../assets/metaverse.png';
+import gif from '../assets/gif.gif';
+import worker from '../assets/worker.gif';
+import gamepass from '../assets/gamepass.png';
+import workingon from '../assets/workingon.png';
 
 
 const images = {
@@ -36,7 +39,6 @@ const images = {
   wordpress,
   tailwind,
   site2,
-  coming,
   mobile,
   api,
   css,
@@ -51,6 +53,10 @@ const images = {
   framer,
   nextjs,
   metaverse,
+  gif,
+  worker,
+  gamepass,
+  workingon,
 };
 
 export default images;

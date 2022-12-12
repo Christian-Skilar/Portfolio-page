@@ -3,6 +3,19 @@ import { HiMenuAlt4, HiX } from 'react-icons/hi';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.scss';
 
+const container = {
+  hidden: { opacity: 0 },
+
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      staggerChildren: 0.2,
+      ease: "easeInOut",
+    }
+  }
+}
+
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
 
@@ -25,19 +38,23 @@ const Navbar = () => {
         {toggle && (
           <motion.div
             key="mobilemenu"
+            variants={container}
+            animate="show" 
             whileInView={{ x: [300, 0] }}
-            transition={{ duration: 0.85, ease: 'easeOut' }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0, x: [0, 300] }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            exit={{ x: [0, 400] }}
           >
             <HiX onClick={() => setToggle(false)} />
             <ul>
               {['home', 'about', 'skills', 'contact'].map((item) => (
-                <li key={item}>
-                  <a href={`#${item}`} onClick={() => setToggle(false)}>
-                    {item}
-                  </a>
-                </li>
+                <motion.li 
+                  variants={container} 
+                  initial="hidden"
+                  animate="show"
+                  key={item}>
+                    <motion.a href={`#${item}`} onClick={() => setToggle(false)}>{item}</motion.a>
+                </motion.li>
               ))}
             </ul>
           </motion.div>

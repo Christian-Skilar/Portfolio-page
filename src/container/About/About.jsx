@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { images } from '../../constants';
-import { AppWrap, MotionWrap } from '../../wrapper';
 import './About.scss';
 
 const abouts = [
@@ -8,15 +7,17 @@ const abouts = [
   { title: 'Modern Web Design', description: 'Modern Website made by using React.js and Tailwind. YT codealong', linkName: 'View Page', link: 'https://modern-website-style.netlify.app/', imgUrl: images.modern},
   { title: 'Dashboard', description: 'Admin dashboard in React.js Tailwind and Syncfusion', linkName: 'View Page', link: 'https://ultimate-dashboard-site.netlify.app/', imgUrl: images.dashboard},
   { title: 'Crypto Community', description: 'Crypto community with React, Sass and Framer Motion', linkName: 'View Page', link: 'https://wallofgains.netlify.app/', imgUrl: images.crypto},
+  { title: 'Free GamePass', description: 'A collection of free games. RapidAPI with functional search bar', linkName: 'View Page', link: 'https://free-games-game-pass.netlify.app/', imgUrl: images.gamepass},
   { title: 'Music Player', description: 'Music player made using the shazam API from RapidAPI', linkName: 'View Page', link: 'https://christify-music-player.netlify.app/', imgUrl: images.lyrics},
-  { title: 'Coming Soon', description: 'Crypto currency page In Development, this one will be awesome...', linkName: 'In The Works', link: ' ', imgUrl: images.coming},
+  { title: 'Coming Soon', description: 'Crypto currency page In Development, this one will be awesome...', linkName: 'In The Works', link: ' ', imgUrl: images.workingon},
+  { title: 'Coming Soon', description: 'Rop off Netflix app with RapidAPI, search function and about pages', linkName: 'In The Works', link: ' ', imgUrl: images.workingon},
 ] 
 
 const About = () => {
 
   return (
-    <>
-      <h2 className="head-text header-mg-top">Good Development -<br /> <span>Good Business</span></h2>
+    <div className='about-container'>
+      <h2 className="head-text header-mg-top">Good Development<br /><span>Good Business</span></h2>
 
         <motion.div className="app__profiles">
         {abouts.map((about, index) => (
@@ -34,12 +35,9 @@ const About = () => {
           </motion.div>
         ))}
         </motion.div>
-    </>
+        <img className='gif' src={images.gif} alt="gif" />
+    </div>
   );
 }
 
-export default AppWrap(
-  MotionWrap(About, 'app__about'),
-  'about',
-  'app__whitebg'
-);
+export default About;;

@@ -87,6 +87,7 @@
   
       textarea {
         height: 170px;
+        resize: vertical;
       }
 
       .error-text{
@@ -152,8 +153,8 @@
     div {
 
       a {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         background-color: var(--white-color);
         margin: 10px;
@@ -164,8 +165,8 @@
         transition: all 0.3s ease-in-out;
 
         svg {
-          width: 17px;
-          height: 17px;
+          width: 20px;
+          height: 20px;
           color: var(--gray-color);
         }
     
@@ -181,9 +182,24 @@
   
   
       @media screen and (min-width: 501px) {
-
           display: none;
-
       }
     }
+  }
+
+
+  //
+  // ---------- MEDIA QUERRIES MOBILE ----------
+  //
+
+  @media screen and (max-width: 501px) {
+
+    .app__footer-form {
+      
+      .button {
+        width: 50%;
+        padding: 13px;
+      }
+    }
+
   }

@@ -1,7 +1,11 @@
-.app__about {
-  flex: 1;
-  width: 100%;
+
+.about-container {
+  display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  background-color: #fff;
 }
   
   .app__profiles {
@@ -9,54 +13,47 @@
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin-top: 2rem;
-    max-width: 900px;
+    margin: 60px 20px 20px 20px;
+    max-width: 1200px;
   }
   
   .app__profile-item {
-    width: 170px;
+    width: 250px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
-    margin: 2rem;
     transition: all 300ms;
     padding-bottom: 10px;
     border-radius: 5px;
+    margin: 10px 20px;
 
     &:hover {
-      box-shadow: 15px 5px 20px rgba(0, 0, 0, 0.1);
-      transform: scale(1.03);
+      box-shadow:
+        2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+        6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+        12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+        100px 100px 80px rgba(0, 0, 0, 0.07)
+      ;
+      transform: scale(1.02);
     }
   
     img {
       width: 100%;
-      height: 170px;
       object-fit: cover;
       border-radius: 5px 5px 0 0;
     }
 
-    h2, p, a {
+    h2, p {
       padding: 0 5px;
-    }
-  
-    @media screen and (min-width: 2000px) {
-      width: 370px;
-      margin: 2rem 4rem;
-  
-      img {
-        height: 320px;
-      }
-    }
-
-    @media screen and (min-width: 660px) {
-      margin: 20px;
     }
   }
 
   .link-text {
     display: flex;
-    width: 70%;
+    width: 95%;
     align-items: center;
     justify-content: center;
     height: 30px;
@@ -73,4 +70,90 @@
       color: var(--white-color);
       background-color: var(--secondary-color);
     }
+  }
+
+  .gif {
+    width: 300px;
+  }
+
+
+    //
+    // ---------- MEDIA ----------
+    //
+
+    @media screen and (max-width: 655px) {
+
+      .app__profiles {
+        margin: 20px 0 0 0;
+        max-width: 900px;
+      }
+      
+      .app__profile-item {
+        width: 170px;
+      }
+    }
+
+
+
+    @media screen and (max-width: 500px) {
+
+      .about-container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 auto;
+        width: 100%;
+        background-color: #fff;
+        
+          &::after {
+            content:'';
+            width: 100%;
+            height: 50px;    
+            position: absolute;
+            left:0;
+            bottom: 325px;
+            background: linear-gradient(transparent, #fff);
+            
+          }
+        }
+      
+        
+      .app__profiles {
+        align-items: center;
+        margin: 20px auto;
+        width: 80%;
+        height: 650px;
+        overflow-x: scroll;
+      }
+
+      .app__profile-item {
+        width: 100%;
+        margin: 40px 0 0 0;
+      
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        &:last-child {
+          margin-bottom: 70px;
+        }
+
+        &:hover {
+          box-shadow: none;
+          transform: scale(1);
+        }
+      }
+
+      .link-text {
+        width: 40%;
+        color: var(--white-color);
+        background-color: var(--secondary-color);
+      }
+
+      .gif {
+        position: relative;
+        margin-top: 10px;
+      }
   }
