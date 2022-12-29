@@ -12,7 +12,7 @@ const App = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 1500);
   }, []);
 
 return (
@@ -23,11 +23,11 @@ return (
         </div>
       ) : (
         <div>
-      <Navbar />
-      <Header />
-      <About />
-      <Skills />
-      <Footer />
+          <Navbar />
+          <Header />
+          <About />
+          <Skills />
+          <Footer />
         </div>
       )}
   </div>

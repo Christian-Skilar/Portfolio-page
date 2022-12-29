@@ -22,13 +22,11 @@
       flex-direction: row;
       justify-content: flex-start;
       align-items: center;
-  
-      margin: 1rem 0;
-      padding: 1rem;
+      margin: 15px;
+      padding: 15px;
       border-radius: 10px;
       cursor: pointer;
       background-color: #f2f7fb;
-  
       transition: all 0.3s ease-in-out;
   
       img {
@@ -58,14 +56,6 @@
     }
   }
   
-  .app__footer-cards .app__footer-card:last-child {
-    background-color: #f2f7fb;
-  }
-  
-  .app__footer-cards .app__footer-card:last-child:hover {
-    box-shadow: 0 0 25px #f2f7fb;
-  }
-  
   .app__footer-form {
     width: 60%;
     flex-direction: column;
@@ -81,7 +71,6 @@
         background-color: var(--primary-color);
   
         font-family: var(--font-base);
-        color: var(--secondary-color);
         outline: none;
       }
   
@@ -90,8 +79,13 @@
         resize: vertical;
       }
 
-      .error-text{
+      .input-error {
+        border: 1.5px solid #FC4E49;
+      }
+
+      .error-message{
         color: #FC4E49;
+        text-transform: capitalize;
         width: 100%;
         text-align: left;
         font-size: 12px;
@@ -126,20 +120,64 @@
       }
     }
 
-    .success-message {
-      display: flex;
-      color: #00B500;
-      margin-top: 15px;
-
-      img {
-        width: 20px;
-        margin-left: 10px;
-      }
-    }
-  
     @media screen and (max-width: 768px) {
       width: 100%;
       margin: 1rem 0;
+    }
+  }
+
+  .popup {
+    position: absolute;
+    background-color: #F7FFFB;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 320px;
+    margin-top: 140px;
+    padding: 40px 20px;
+    box-shadow:
+    2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+    transition: all 300ms ease-in;
+
+    h2 {
+      font-size: 27px;
+      margin: 20px 0 10px 0;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px;
+      border-radius: 50%;
+      box-shadow:
+      3.4px 3.4px 2.7px rgba(0, 0, 0, 0.022),
+      8.7px 8.7px 6.9px rgba(0, 0, 0, 0.031),
+      17.7px 17.7px 14.2px rgba(0, 0, 0, 0.039),
+      36.5px 36.5px 29.2px rgba(0, 0, 0, 0.048),
+      100px 100px 80px rgba(0, 0, 0, 0.07);
+    }
+
+    button {
+      color: #fff;
+      background-color: #33BA7C;
+      border: none;
+      padding: 12px;
+      width: 200px;
+      margin: 40px auto -15px auto;
+      border-radius: 5px;
+      cursor: pointer;
     }
   }
 

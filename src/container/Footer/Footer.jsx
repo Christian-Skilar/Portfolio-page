@@ -8,35 +8,39 @@ import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import './Footer.scss';
 
+const Success = () => {
+  const [showElement, setShowElement] = useState(true);
 
-
-const Result = () => {
+  const handleClick = () => {
+    setShowElement(false);
+  };
+  
   return (
-    <div className='success-message'>
-      <p>Message is sent</p>
-      <img src={images.check} alt="success check" />
-    </div>
+    showElement? <div className='popup' id='popup'>
+      <img src={images.checked} alt="success check" />
+      <h2>Takk</h2>
+      <p>Din melding er sendt. Vi kommer tilbake til deg så fort som mulig</p>
+      <button onClick={handleClick}>OK</button>
+    </div>: null
   )
 }
+
 
 const Footer = () => {
 
   const form = useRef();
   const [result, showResult] = useState(false);
 
-  const formik = useFormik({
+  const { errors, touched, handleBlur, values, handleChange, handleSubmit } = useFormik({
     initialValues: {
       name: '', 
       email: '', 
       message: '' 
     },
     validationSchema: Yup.object({
-      name: Yup.string()
-	    .required('Name is required'),
-      email: Yup.string()
-	    .required('Email is required'),
-      message: Yup.string()
-      .required('Message field is required')
+      name: Yup.string().required(),
+      email: Yup.string().email("not a valid email").required("not a valid email"),
+      message: Yup.string().min(10).required("message to short, min 10 characters")
     }),
     onSubmit: (values, {resetForm}) => {
       resetForm({ values: '' })
@@ -60,7 +64,7 @@ const Footer = () => {
           // Hide success message after some time
         setTimeout(() => {
         showResult(false);
-      }, 5000);
+      }, 10000);
    },
 });
 
@@ -79,45 +83,42 @@ const Footer = () => {
         </div>
       </div>
 
-      <form ref={form} onSubmit={formik.handleSubmit} className="app__footer-form app__flex">
+      <form ref={form} onSubmit={handleSubmit} className="app__footer-form app__flex">
         <input 
           placeholder='Name' 
           type="text" 
           name="name" 
-          className="p-text"
-          onChange={formik.handleChange}
-         	value={formik.values.name}
+          onBlur={handleBlur}
+          className={errors.name && touched.name ? "input-error" : ""}
+          onChange={handleChange}
+         	value={values.name}
           />
-          	<div className={`error-text ${formik.touched.name && formik.errors.name ? 'show' : ''}`}>
-                    {formik.errors.name}
-            </div>
+          {errors.name && touched.name && <p className='error-message'>{errors.name}</p>}
           
           <input 
           placeholder='Email' 
           type="email" 
-          name="email" 
-          className="p-text"
-          onChange={formik.handleChange}
-          value={formik.values.email}
+          name="email"
+          onBlur={handleBlur}
+          className={errors.email && touched.email ? "input-error" : ""}
+          onChange={handleChange}
+          value={values.email}
           />
-            <div className={`error-text ${formik.touched.email && formik.errors.email ? 'show' : ''}`}>
-                    {formik.errors.email}
-            </div>
+          {errors.email && touched.email && <p className='error-message'>{errors.email}</p>}
 
           <textarea 
           placeholder='Message' 
-          name="message" 
-          className="p-text"
-          onChange={formik.handleChange}
-          value={formik.values.message}
+          name="message"
+          onBlur={handleBlur}
+          className={errors.message && touched.message ? "input-error" : ""}
+          onChange={handleChange}
+          value={values.message}
           />
-            <div className={`error-text ${formik.touched.message && formik.errors.message ? 'show' : ''}`}>
-                    {formik.errors.message}
-            </div>
+          {errors.message && touched.message && <p className='error-message'>{errors.message}</p>}
           
         <input type="submit" value="Send Message" className="button" />
-        <div>{result ? <Result/> : null}</div>
       </form>
+      {result ? <Success/> : null}
 
       <div className="sosials">
         <div>

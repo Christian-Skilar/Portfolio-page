@@ -26,6 +26,8 @@ import gif from '../assets/gif.gif';
 import worker from '../assets/worker.gif';
 import gamepass from '../assets/gamepass.png';
 import workingon from '../assets/workingon.png';
+import aichat from '../assets/AIchat.png';
+import checked from '../assets/checked.png';
 
 
 const images = {
@@ -57,6 +59,8 @@ const images = {
   worker,
   gamepass,
   workingon,
+  aichat,
+  checked,
 };
 
 export default images;
