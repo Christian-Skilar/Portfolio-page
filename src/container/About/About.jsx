@@ -16,7 +16,7 @@ const abouts = [
 const About = () => {
 
   return (
-    <div className='about-container'>
+    <div className='about-container' id='about'>
       <h2 className="head-text header-mg-top">Good Development<br /><span>Good Business</span></h2>
 
         <motion.div className="app__profiles">
@@ -41,4 +41,4 @@ const About = () => {
   );
 }
 
-export default About;;
+export default About;
